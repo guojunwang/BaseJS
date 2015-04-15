@@ -5,9 +5,9 @@ function ajax(obj) {
 			return new XMLHttpRequest();
 		} else if (typeof ActiveXObject != 'undefined') {
 			var version = [
-										'MSXML2.XMLHttp.6.0',
-										'MSXML2.XMLHttp.3.0',
-										'MSXML2.XMLHttp'
+				'MSXML2.XMLHttp.6.0',
+				'MSXML2.XMLHttp.3.0',
+				'MSXML2.XMLHttp'
 			];
 			for (var i = 0; version.length; i ++) {
 				try {
@@ -48,7 +48,7 @@ function ajax(obj) {
 	}
 	function callback() {
 		if (xhr.status == 200) {
-			obj.success(xhr.responseText);			//回调传递参数
+			obj.success(xhr.responseText);	//回调传递参数
 		} else {
 			alert('获取数据错误！错误代号：' + xhr.status + '，错误信息：' + xhr.statusText);
 		}	
