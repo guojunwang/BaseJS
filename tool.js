@@ -8,7 +8,6 @@
 	(s = ua.match(/chrome\/([\d.]+)/)) ? sys.chrome = s[1] : 
 	(s = ua.match(/opera\/.*version\/([\d.]+)/)) ? sys.opera = s[1] : 
 	(s = ua.match(/version\/([\d.]+).*safari/)) ? sys.safari = s[1] : 0;
-	
 	if (/webkit/.test(ua)) sys.webkit = ua.match(/webkit\/([\d.]+)/)[1];
 })();
 
@@ -24,14 +23,8 @@ function addDomLoaded(fn) {
 	}
 	
 	if ((sys.opera && sys.opera < 9) || (sys.firefox && sys.firefox < 3) || (sys.webkit && sys.webkit < 525)) {
-		//无论采用哪种，基本上用不着了
-		/*timer = setInterval(function () {
-			if (/loaded|complete/.test(document.readyState)) { 	//loaded是部分加载，有可能只是DOM加载完毕，complete是完全加载，类似于onload
-				doReady();
-			}
-		}, 1);*/
-
-		timer = setInterval(function () {
+		//设置定时器
+		var timer = setInterval(function () {
 			if (document && document.getElementById && document.getElementsByTagName && document.body) {
 				doReady();
 			}
