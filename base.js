@@ -317,7 +317,7 @@ Base.prototype.hover = function (over, out) {
 	return this;
 };
 
-//设置点击切换方法
+//点击切换方法
 Base.prototype.toggle = function () {
 	for (var i = 0; i < this.elements.length; i ++) {
 		(function (element, args) {
