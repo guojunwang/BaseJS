@@ -1,3 +1,4 @@
+//拖拽插件，扩展
 ﻿$().extend('drag', function () {
 	var tags = arguments;
 	for (var i = 0; i < this.elements.length; i ++) {
