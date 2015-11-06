@@ -551,6 +551,34 @@ Base.prototype.extend = function (name, fn) {
 };
 
 
+var obj = [{'money':10,'age':'21','name':'zhangzhang'},
+           {'money':2,'age':'20','name':'zhaochao'},
+           {'money':134,'age':'26','name':'zhangxiang'},
+           {'money':121,'age':'12','name':'chenbo'}
+          ]
+
+
+var by = function(name){
+    return function(o, p){
+        var a, b;
+       if(typeof o === "object" && typeof p === "object" && o && p) {
+            a= o[name];
+            b= p[name];
+            if(a === b) {
+                return 0;
+               }
+            if(typeof a === typeof b) {
+                    return a < b ? -1 : 1;
+            }
+            return typeof a < typeof b ? -1 : 1;
+        }else{
+            throw ("error");
+        }
+    }
+}
+
+obj.sort(by("money"));
+
 
 
 
